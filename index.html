@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>Tính số ngày</p>
+
+<input id="month"><br><br>
+
+<button id="check" onclick="check()">Tính số ngày</button>
+<br><br>
+
+<p id="result" style="border: 1px solid black; border-radius: 8px; width: 300px; padding: 5px">Result: </p>
+<script>
+    function check() {
+        let input = +document.getElementById('month').value;
+        switch (input) {
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.getElementById('result').innerText = 'Result: Tháng ' + input + ' có 30 ngày';
+                break;
+            case 2:
+                document.getElementById('result').innerText = 'Result: Tháng ' + input + ' có 28 hoặc 29 ngày';
+                break;
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById('result').innerText = 'Result: Tháng ' + input + ' có 31 ngày';
+                break;
+            default:
+                document.getElementById('result').innerText = 'Result: Không có tháng ' + input;
+        }
+    }
+</script>
+</body>
+</html>
